@@ -22,18 +22,29 @@ public class Candidato {
 
     @Column(name = "DS_CARGO")
     private String cargo;
+    @Column(name = "NR_PARTIDO")
+    private Integer numeroPartido;
 
+    @Column(name = "QT_VOTOS_NOMINAIS")
+    private Integer qtdVotos;
+
+    @Column(name = "DS_SIT_TOT_TURNO")
+    private String situacao;
 
     public Candidato() {
 
     }
 
-    public Candidato(Long id, String nome, String partido, Integer ano, String cargo) {
+
+    public Candidato(Long id, String nome, String partido, Integer ano, String cargo, Integer numeroPartido, Integer qtdVotos, String situacao) {
         this.id = id;
         this.nome = nome;
         this.partido = partido;
         this.ano = ano;
         this.cargo = cargo;
+        this.numeroPartido = numeroPartido;
+        this.qtdVotos = qtdVotos;
+        this.situacao = situacao;
     }
 
     public Long getId() {
@@ -74,5 +85,29 @@ public class Candidato {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public Integer getNumeroPartido() {
+        return numeroPartido;
+    }
+
+    public void setNumeroPartido(Integer numeroPartido) {
+        this.numeroPartido = numeroPartido;
+    }
+
+    public Integer getQtdVotos() {
+        return qtdVotos;
+    }
+
+    public void setQtdVotos(Integer qtdVotos) {
+        this.qtdVotos = qtdVotos;
+    }
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
 }

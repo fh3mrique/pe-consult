@@ -4,9 +4,13 @@ import ResultTable from "./resultTable";
 interface Candidato {
   nome: string;
   partido: string;
-  quantidadeVotos: number;
-  percentualVotos: number;
+  /* quantidadeVotos: number;
+  percentualVotos: number; */
+  numeroPartido: string;
+  qtdVotos: number;
   cargo: string;
+  ano: number;
+  situacao: string;
 }
 
 interface ResultadoRequest {
