@@ -19,6 +19,12 @@ public class CandidatoService {
 
     public Candidato getResultado(String nome, String cargo, int ano) {
         List<Candidato> resultados = candidatoRepository.findByNomeAndCargoAndAno(nome, cargo, ano);
-        return resultados.isEmpty() ? null : resultados.get(0);
+        if (resultados.isEmpty()) {
+            return null;
+        }
+        Candidato candidato = resultados.get(0);
+        Integer totalVotos = candidatoRepository.sumVotosByNomeAndCargoAndAno(nome, cargo, ano);
+        candidato.setQtdVotos(totalVotos);
+        return candidato;
     }
 }
